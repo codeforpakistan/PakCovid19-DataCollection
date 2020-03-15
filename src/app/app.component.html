@@ -1,86 +1,77 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<div class="container">
-  <div class="row">
-    <h1 class="display-4 text-center">COVID-19 Data Collection Form</h1>
-  </div>
-  <form>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Patient Id</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Confirmation Date</label>
-      <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Name</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Gender</label>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-        <label class="form-check-label" for="exampleRadios1">
-          Male
-        </label>
+<div class="container mt-4" style="max-width: 90%;">
+  <h3 class="text-center">COVID-19 Data Collection Form</h3>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
+    <div class="row mt-5">
+      <div class="form-group col-md-6">
+        <label for="patientID">Patient Id</label>
+        <input type="text" class="form-control form-control-sm" id="patientID" name="patientID" [(ngModel)]="model.patientID" #patientID="ngModel" [ngClass]="{ 'is-invalid': f.submitted && patientID.invalid }" required placeholder="">
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-        <label class="form-check-label" for="exampleRadios2">
-          Female
-        </label>
+      <div class="form-group col-md-6">
+        <label for="cdate">Confirmation Date</label>
+        <input type="date" class="form-control form-control-sm" id="cdate" name="confirmationDate" [(ngModel)]="model.confirmationDate" #confirmationDate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && confirmationDate.invalid }" required placeholder="">
       </div>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">DOB</label>
-      <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Resident</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Resident Province</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-    </div>
-    
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Admitted At - Hospital</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Admitted At - Province</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Infection Source</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>Source 1</option>
-        <option>Source 2</option>
-        <option>Source 3</option>
-        <option>Source 4</option>
-        <option>Source 5</option>
-      </select>
-    </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Current Status</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>Infected</option>
-            <option>Recovered</option>
-            <option>Deceased</option>
-            <option>Suscpted Infection</option>
-            <option>Not Infected</option>
-          </select>
+      <div class="form-group col-md-6">
+        <label for="fullName">Full Name</label>
+        <input type="text" class="form-control" id="DOB" name="fullName" [(ngModel)]="model.fullName" #fullName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fullName.invalid }" required placeholder="">
+      </div>
+      <div class="form-group col-md-6">
+        <label style="display: block;" for="gender">Gender</label>
+        <div class="form-check" style="display: inline;" >
+          <input class="form-check-input" type="radio" name="genderRadio" [(ngModel)]="model.gender" id="genderRadio" value="male" checked>
+          <label class="form-check-label" for="genderRadio">
+            Male
+          </label>
         </div>
-    <button type="submit" class="btn btn-primary float-right">Submit</button>
+        <div class="form-check ml-3" style="display: inline;" >
+          <input class="form-check-input" type="radio"  [(ngModel)]="model.gender" name="genderRadio2" id="genderRadio2" value="female">
+          <label class="form-check-label" for="genderRadio2">
+            Female
+          </label>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="DOB">DOB</label>
+        <input type="date" class="form-control" id="DOB" name="DOB" [(ngModel)]="model.DOB" #DOB="ngModel" [ngClass]="{ 'is-invalid': f.submitted && DOB.invalid }" required  placeholder="">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="resident">Resident</label>
+        <input type="text" class="form-control" id="resident" name="resident" [(ngModel)]="model.resident" #resident="ngModel" [ngClass]="{ 'is-invalid': f.submitted && resident.invalid }" required placeholder="">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="residentProvince">Resident Province</label>
+        <input type="text" class="form-control" id="residentProvince" name="residentProvince" [(ngModel)]="model.residentProvince" #residentProvince="ngModel" [ngClass]="{ 'is-invalid': f.submitted && residentProvince.invalid }" required placeholder="">
+      </div>
+    
+    <div class="form-group col-md-6">
+        <label for="admittedAtHospital">Admitted At - Hospital</label>
+        <input type="text" class="form-control" id="admittedAtHospital" name="admittedAtHospital" [(ngModel)]="model.admittedAtHospital" #admittedAtHospital="ngModel" [ngClass]="{ 'is-invalid': f.submitted && admittedAtHospital.invalid }" required placeholder="">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="admittedAtProvince">Admitted At - Province</label>
+        <input type="text" class="form-control" id="admittedAtProvince" name="admittedAtProvince" [(ngModel)]="model.admittedAtProvince" #admittedAtProvince="ngModel" [ngClass]="{ 'is-invalid': f.submitted && admittedAtProvince.invalid }" required placeholder="">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="infectionSource">Infection Source</label>
+        <select class="form-control" id="infectionSource" name="infectionSource" [(ngModel)]="model.infectionSource">
+          <option value="source 1">Source 1</option>
+          <option value="source 2">Source 2</option>
+          <option value="source 3">Source 3</option>
+          <option value="source 4">Source 4</option>
+          <option value="source 5">Source 5</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="currentStatus">Current Status</label>
+        <select class="form-control" id="currentStatus" name="currentStatus" [(ngModel)]="model.currentStatus">
+          <option value="Infected">Infected</option>
+          <option value="Recovered">Recovered</option>
+          <option value="Deceased">Deceased</option>
+          <option value="Suspected Infection">Suspected Infection</option>
+          <option value="Not Infected">Not Infected</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3" style=" display: block; width: 400px; margin-left: auto; margin-right: auto;">Submit</button>
   </form>
 </div>
 <router-outlet></router-outlet>
