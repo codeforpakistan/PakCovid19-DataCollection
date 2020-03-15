@@ -30,6 +30,7 @@ export class AppComponent {
       console.log('form valid');
       const resp = await this.dataService.createNew(this.model);
       console.log(resp);
+      f.submitted = false;
       f.reset();
     }
   }
