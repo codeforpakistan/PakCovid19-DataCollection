@@ -34,9 +34,10 @@
         <input type="date" class="form-control" id="DOB" name="DOB" [(ngModel)]="model.DOB" #DOB="ngModel" [ngClass]="{ 'is-invalid': f.submitted && DOB.invalid }" required  placeholder="">
       </div>
       <div class="form-group col-md-6">
+        //cities source https://gist.github.com/malikbilal1997/4f41d4d153fca7087a8875cac7db8836
         <label for="resident">Resident</label>
         <select name="Location" id="Location" class="form-control" id="resident" name="resident" [(ngModel)]="model.resident" #resident="ngModel" [ngClass]="{ 'is-invalid': f.submitted && resident.invalid }" required >
-          <option value="" disabled selected>Select The City</option>
+          <option value="" disabled selected>Select City</option>
           <option value="Islamabad">Islamabad</option>
           <option value="Ahmed Nager Chatha">Ahmed Nager Chatha</option>
           <option value="Ahmadpur East">Ahmadpur East</option>

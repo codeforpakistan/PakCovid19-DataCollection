@@ -6,15 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { NonVerifiedCasesComponent } from './non-verified-cases/non-verified-cases.component';
-import { KeysPipe } from "./pipes/keys.pipe";
-
+import { ArraySortPipe } from "./pipes/sort.pipe";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NonVerifiedCasesComponent,
-    KeysPipe
+    ArraySortPipe
   ],
   imports: [
     BrowserModule,
@@ -23,7 +22,7 @@ import { KeysPipe } from "./pipes/keys.pipe";
     AppRoutingModule
   ],
   exports: [
-    KeysPipe
+    ArraySortPipe
   ],
   providers: [],
   bootstrap: [AppComponent]
