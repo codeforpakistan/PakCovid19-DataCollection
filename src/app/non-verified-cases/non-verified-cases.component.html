@@ -1,0 +1,44 @@
+  
+<div class="container-fluid mt-4 font" style="max-width: 100%;">
+  <h6 class="text-center">Non Verified Cases</h6>
+  <div class="table-responsive scroll mt-4">
+    <table class="table table-sm table-striped table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>PatientID</th>
+          <th>Full Name</th>
+          <th>Confirmation Date</th>
+          <th>Verified</th>
+          <th>Gender</th>
+          <th>DOB</th>
+          <th>Rresident</th>
+          <th>Resident Province</th>
+          <th>Admitted At Hospital</th>
+          <th>Admitted At Province</th>
+          <th>Infection Source</th>
+          <th>Current Status</th>
+          <th>Date Created</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+        <tbody>
+          <tr *ngFor="let eachKey of nonVerfiedCases | sort: 'timeStamp'">
+            <td>{{eachKey.patientID}}</td>
+            <td>{{eachKey.fullName}}</td>
+            <td>{{eachKey.confirmationDate | date: 'mediumDate'}}</td>
+            <td>{{eachKey.verified ? 'Yes' : 'No'}}</td>
+            <td>{{eachKey.gender}}</td>
+            <td>{{eachKey.DOB | date: 'mediumDate'}}</td>
+            <td>{{eachKey.resident}}</td>
+            <td>{{eachKey.residentProvince}}</td>
+            <td>{{eachKey.admittedAtHospital}}</td>
+            <td>{{eachKey.admittedAtProvince}}</td>
+            <td>{{eachKey.infectionSource}}</td>
+            <td>{{eachKey.currentStatus}}</td>
+            <td>{{eachKey.timeStamp | date: 'mediumDate'}}</td>
+            <td><button type="button" class="tn btn-primary btn-sm" (click)="updateVerificationFlag(eachKey._id)">Mark Verfied</button></td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</div>

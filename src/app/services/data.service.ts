@@ -11,7 +11,23 @@ export class DataService {
   createNew(body) {
     return this.http.post(environment.api + '/data/create', body, {
       headers: {
-        'api-key': '1f62916b-4b43-4f1c-a600-c2bc4112e44b',
+        'api-key': environment.apiKey
+      }
+    }).toPromise();
+  }
+
+  getNonVerfiedCases() {
+    return this.http.get(environment.api + '/data/get-non-verified-cases', {
+      headers: {
+        'api-key': environment.apiKey
+      }
+    }).toPromise();
+  }
+
+  markVerify(caseId: String){
+    return this.http.post(environment.api + '/data/update-verification-flag', {_id: caseId}, {
+      headers: {
+        'api-key': environment.apiKey
       }
     }).toPromise();
   }
