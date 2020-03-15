@@ -1,0 +1,86 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<div class="container">
+  <div class="row">
+    <h1 class="display-4 text-center">COVID-19 Data Collection Form</h1>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Patient Id</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Confirmation Date</label>
+      <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Name</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Gender</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+        <label class="form-check-label" for="exampleRadios1">
+          Male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+        <label class="form-check-label" for="exampleRadios2">
+          Female
+        </label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">DOB</label>
+      <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Resident</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Resident Province</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Admitted At - Hospital</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Admitted At - Province</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Infection Source</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Source 1</option>
+        <option>Source 2</option>
+        <option>Source 3</option>
+        <option>Source 4</option>
+        <option>Source 5</option>
+      </select>
+    </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Current Status</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>Infected</option>
+            <option>Recovered</option>
+            <option>Deceased</option>
+            <option>Suscpted Infection</option>
+            <option>Not Infected</option>
+          </select>
+        </div>
+    <button type="submit" class="btn btn-primary float-right">Submit</button>
+  </form>
+</div>
+<router-outlet></router-outlet>
